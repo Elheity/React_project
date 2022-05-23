@@ -7,23 +7,25 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { black, blueA700, red100 } from "material-ui/styles/colors";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
-    marginLeft: theme.spacing(10),
+    marginLeft: theme.spacing(1),
     display: "flex",
   },
  logo: {
     flexGrow: "1",
     cursor: "pointer",
+    color: black
   },
   link: {
     textDecoration: "none",
-    color: "white",
+    color: "black",
     fontSize: "20px",
-    marginLeft: theme.spacing(20),
+    marginLeft: theme.spacing(5),
     "&:hover": {
-      color: "yellow",
+      color: "white",
       borderBottom: "1px solid white",
     },
   },
@@ -33,25 +35,23 @@ function Navbar() {
   const classes = useStyles();
   
   return (
-    <AppBar position="static">
+    <AppBar color="transparent">
       <CssBaseline />
       <Toolbar>
         <Typography variant="h4" className={classes.logo}>
-          Navbar
+          Pixypay
         </Typography>
           <div className={classes.navlinks}>
             <Link to="/Home" className={classes.link}>
               Home
             </Link>
+            <Link to="/Dates" className={classes.link}>
+              Date
+            </Link>
             <Link to="/login" className={classes.link}>
-              out
+              logOut
             </Link>
-            <Link to="/contact" className={classes.link}>
-              Contact
-            </Link>
-            <Link to="/faq" className={classes.link}>
-              FAQ
-            </Link>
+            
           </div>
       </Toolbar>
     </AppBar>
